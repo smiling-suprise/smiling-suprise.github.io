@@ -27,7 +27,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: url("dx/大象背景.jpg") no-repeat center center;
+            background: url("https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/dx/大象背景.jpg") no-repeat center center;
             background-size: cover;
             font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
             position: relative;
@@ -771,9 +771,6 @@
             font-weight: bold;
         }
         
-
-
-
         .caller-details {
             text-align: left;
         }
@@ -842,57 +839,6 @@
                 opacity: 0;
             }
         }
-
-        .birthday-message {
-            position: absolute;
-            top: calc(50% + min(200px, 36vw));
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            text-align: center;
-            font-size: min(48px, 8vw);
-            background: linear-gradient(45deg, #87CEEB, #FFFFFF, #87CEEB, #FFFFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            z-index: 50;
-            opacity: 0;
-            transition: all 0.8s ease;
-            font-family: 'Ma Shan Zheng', cursive;
-            font-weight: bold;
-            letter-spacing: 3px;
-            text-shadow: 0 0 30px rgba(135, 206, 235, 0.8);
-            max-width: 90%;
-            padding: 0 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            padding: min(30px, 4vw);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-            border: 3px solid #87CEEB;
-        }
-        
-        .birthday-message.show {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-        
-        .cake-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            font-size: min(32px, 6vw);
-            color: #000000;
-            z-index: 7;
-            font-family: 'Ma Shan Zheng', cursive;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            max-width: 90%;
-            padding: 0 10px;
-            white-space: nowrap;
-            width: 100%;
-        }
         
         .open .lid {
             transform: rotateX(-110deg);
@@ -956,10 +902,6 @@
                 flex-direction: column;
                 gap: min(15px, 3vw);
             }
-            
-            .cake-text {
-                font-size: min(28px, 5vw);
-            }
         }
 
         @media (max-width: 480px) {
@@ -984,10 +926,6 @@
                 white-space: normal;
                 max-width: 80%;
             }
-            
-            .cake-text {
-                font-size: min(24px, 4.5vw);
-            }
         }
 
         @media (max-height: 600px) {
@@ -1000,10 +938,6 @@
                 top: calc(50% + min(200px, 50vh));
                 font-size: min(20px, 4vh);
             }
-            
-            .cake-text {
-                font-size: min(20px, 3.5vh);
-            }
         }
 
         @media (orientation: landscape) and (max-height: 500px) {
@@ -1014,10 +948,6 @@
             
             .instructions {
                 top: calc(50% + min(150px, 40vh));
-                font-size: min(18px, 3vh);
-            }
-            
-            .cake-text {
                 font-size: min(18px, 3vh);
             }
         }
@@ -1162,38 +1092,37 @@
             let audioInitialized = false;
             let isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
             
-            // 视频缓存管理
-            const videoCache = new Map();
+            // jsdelivr CDN 视频路径数组
             const videoUrls = [
-                "视频/IMG_0005.Mp4",
-                "视频/IMG_4326.MP4",
-				"视频/IMG_0289.MP4",
-                "视频/IMG_9207.MP4",
-                "视频/IMG_6966.MP4",
-                "视频/小艾.mp4",
-                "视频/VID_20251117194826807.mp4",
-                "视频/IMG_5056.MP4",
-                "视频/IMG_3561.Mp4",
-                "视频/玉如意.mp4",
-                "视频/IMG_5752.Mp4",
-                "视频/VID_20251124163246967.MP4",
-                "视频/微信视频2025-11-24_171633_904.mp4",
-                "视频/yy.mp4",
-                "视频/hh.mp4",
-                "视频/lv_0_20251118202757.mp4",
-                "视频/e7672c6c6ef6ede0d11f5c31c63a835c.mp4",
-                "视频/Aqiu..MOV.mp4",
-                "视频/佐.MP4",
-                "视频/29931081b8b2349b21509c4ebb395bc1.mp4",
-                "视频/11ecf79721a80297093e6b67605c1386.mp4",
-                "视频/900e7602be07b1767152c9d9b53cf682.mp4",
-                "视频/d20ee2abda9ea1d26f9a64c9599edc68.mp4"
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/IMG_0005.Mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/IMG_4326.MP4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/IMG_0289.MP4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/IMG_9207.MP4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/IMG_6966.MP4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/小艾.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/VID_20251117194826807.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/IMG_5056.MP4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/IMG_3561.Mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/玉如意.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/IMG_5752.Mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/VID_20251124163246967.MP4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/微信视频2025-11-24_171633_904.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/yy.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/hh.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/lv_0_20251118202757.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/e7672c6c6ef6ede0d11f5c31c63a835c.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/Aqiu..MOV.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/佐.MP4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/29931081b8b2349b21509c4ebb395bc1.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/11ecf79721a80297093e6b67605c1386.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/900e7602be07b1767152c9d9b53cf682.mp4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/d20ee2abda9ea1d26f9a64c9599edc68.mp4"
             ];
             
             const specialVideoUrls = [
-                "视频/IMG_3659.MP4",
-                "视频/IMG_3750.MP4",
-                "视频/IMG_3917.MP4"
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/IMG_3659.MP4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/IMG_3750.MP4",
+                "https://cdn.jsdelivr.net/gh/smiling-suprise/smiling-suprise.github.io@main/视频/IMG_3917.MP4"
             ];
             
             let currentVideoIndex = 0;
@@ -1223,7 +1152,6 @@
                     });
                 }
                 
-                // iOS Safari需要用户交互才能播放音频
                 const playPromise = backgroundMusic.play();
                 if (playPromise !== undefined) {
                     playPromise.then(() => {
@@ -1231,7 +1159,6 @@
                         audioInitialized = true;
                     }).catch(error => {
                         console.log('背景音乐自动播放失败:', error);
-
                     });
                 }
             }
@@ -1265,13 +1192,11 @@
             
             // 优化的视频预加载
             function preloadVideos() {
-                // 预加载前几个视频
                 const preloadCount = Math.min(3, videoUrls.length);
                 for (let i = 0; i < preloadCount; i++) {
                     preloadVideo(videoUrls[i]);
                 }
                 
-                // 预加载特殊视频
                 specialVideoUrls.forEach(url => {
                     preloadVideo(url);
                 });
@@ -1279,19 +1204,10 @@
             
             // 单个视频预加载
             function preloadVideo(url) {
-                if (videoCache.has(url)) return;
-                
                 const video = document.createElement('video');
                 video.src = url;
                 video.preload = 'auto';
                 video.load();
-                
-                videoCache.set(url, video);
-            }
-            
-            // 从缓存获取视频
-            function getCachedVideo(url) {
-                return videoCache.get(url);
             }
             
             // 优化iOS视频播放
@@ -1308,7 +1224,6 @@
             window.addEventListener('load', function() {
                 preloadVideos();
                 
-                // 设置iOS视频属性
                 setupVideoForIOS(videoPlayer);
                 setupVideoForIOS(lightVideoPlayer);
                 
@@ -1399,7 +1314,6 @@
                         videoPlayer.pause();
                         videoPlayer.currentTime = 0;
                         
-                        // 清除之前的事件监听器
                         videoPlayer.oncanplay = null;
                         videoPlayer.onplay = null;
                         videoPlayer.onended = null;
@@ -1408,18 +1322,10 @@
                         videoPlayer.onstalled = null;
                         videoPlayer.onloadeddata = null;
                         
-                        // 尝试从缓存获取视频
-                        const cachedVideo = getCachedVideo(videoUrls[currentVideoIndex]);
-                        if (cachedVideo) {
-                            console.log('使用缓存的视频');
-                            videoPlayer.src = videoUrls[currentVideoIndex];
-                        } else {
-                            videoPlayer.src = videoUrls[currentVideoIndex];
-                        }
+                        videoPlayer.src = videoUrls[currentVideoIndex];
                         
                         videoContainer.classList.add('show');
                         
-                        // iOS优化
                         if (isIOS) {
                             videoPlayer.load();
                         }
@@ -1447,15 +1353,11 @@
                         
                         videoPlayer.onerror = function() {
                             console.log('视频加载错误:', videoUrls[currentVideoIndex]);
-                            console.log('视频错误详情:', videoPlayer.error);
                             handleVideoError();
                         };
                         
                         videoPlayer.onwaiting = function() {
                             console.log('视频缓冲中...');
-                        };
-                        
-                        videoPlayer.onplaying = function() {
                         };
                         
                         videoPlayer.onstalled = function() {
@@ -1520,7 +1422,6 @@
                 videoCallContainer.classList.add('show');
                 
                 setTimeout(() => {
-                    // 停止背景音乐，播放电话铃声
                     stopAllAudio();
                     
                     callMusic.currentTime = 0;
@@ -1531,8 +1432,6 @@
             function answerVideoCall() {
                 videoCallContainer.classList.remove('show');
                 
-                // 停止电话铃声，恢复背景音乐
-
                 stopAllAudio();
                 
                 setTimeout(function() {
@@ -1550,7 +1449,6 @@
                         lightVideoPlayer.pause();
                         lightVideoPlayer.currentTime = 0;
                         
-                        // 清除之前的事件监听器
                         lightVideoPlayer.oncanplay = null;
                         lightVideoPlayer.onplay = null;
                         lightVideoPlayer.onended = null;
@@ -1559,19 +1457,10 @@
                         lightVideoPlayer.onstalled = null;
                         lightVideoPlayer.onloadeddata = null;
                         
-                        // 尝试从缓存获取视频
-                        const cachedVideo = getCachedVideo(specialVideoUrls[currentSpecialVideoIndex]);
-                        if (cachedVideo) {
-                            console.log('使用缓存的特殊视频');
-                            lightVideoPlayer.src = specialVideoUrls[currentSpecialVideoIndex];
-                        } else {
-                            lightVideoPlayer.src = specialVideoUrls[currentSpecialVideoIndex];
-                        }
+                        lightVideoPlayer.src = specialVideoUrls[currentSpecialVideoIndex];
                         
                         lightVideoContainer.classList.add('show');
 
-                        
-                        // iOS优化
                         if (isIOS) {
                             lightVideoPlayer.load();
                         }
@@ -1599,15 +1488,11 @@
                         
                         lightVideoPlayer.onerror = function() {
                             console.log('特殊视频加载错误:', specialVideoUrls[currentSpecialVideoIndex]);
-                            console.log('视频错误详情:', lightVideoPlayer.error);
                             handleSpecialVideoError();
                         };
                         
                         lightVideoPlayer.onwaiting = function() {
                             console.log('特殊视频缓冲中...');
-                        };
-                        
-                        lightVideoPlayer.onplaying = function() {
                         };
                         
                         lightVideoPlayer.onstalled = function() {
@@ -1763,7 +1648,6 @@
                     cakeInstruction.classList.remove('show');
                     
                     if (candle.classList.contains('flame') && !birthdayMusicStarted) {
-                        // 停止背景音乐，播放生日快乐歌
                         stopAllAudio();
                         
                         birthdayMusic.currentTime = 0;
